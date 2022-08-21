@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yI4/SmyyVRXMwCog+6PpFWIO6bNZM5JmLieo5QwFiiY=",
+  "Source": "goiaba_api",
+  "BasePath": "_content/goiaba_api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
