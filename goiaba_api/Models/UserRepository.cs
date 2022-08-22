@@ -1,8 +1,17 @@
-﻿namespace goiaba_api.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+
+namespace goiaba_api.Models
 {
     public class UserRepository : IUserRepository
     {
-        
+
+        private readonly AppDbContext _context;
+        public UserRepository(AppDbContext context)
+        {
+            _context = context;
+        }
+
         public bool Create(UserModel user)
         {
             throw new NotImplementedException();
@@ -18,9 +27,10 @@
             throw new NotImplementedException();
         }
 
-        public List<UserModel> FindAll()
+        public async Task<List<UserModel>> FindAll()
         {
-            throw new NotImplementedException();
+            return await _context.Users.ToListAsync();
+           
         }
 
         public bool Update(int id, UserModel user)

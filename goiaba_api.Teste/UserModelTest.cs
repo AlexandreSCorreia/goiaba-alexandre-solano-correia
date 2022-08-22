@@ -16,13 +16,15 @@ namespace goiaba_api.Teste
             string firstName = "Cliente 01";
             string surname = "Sobrenome";
             int age = 22;
+            DateTime data = DateTime.Now;
 
             //Act
             var user = new UserModel()
             {
                 FirstName = firstName,
                 Surname = surname,
-                Age = age
+                Age = age,
+                CreationDate = data
 
             };
 
@@ -31,6 +33,7 @@ namespace goiaba_api.Teste
             Assert.Equal(firstName, user.FirstName);
             Assert.Equal(surname, user.Surname);
             Assert.Equal(age, user.Age);
+            Assert.Equal(data, user.CreationDate);
  
 
         }//End CriarObjetoUserValido

@@ -1,5 +1,6 @@
 ﻿using goiaba_api.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace goiaba_api.Controllers
 {
@@ -20,11 +21,15 @@ namespace goiaba_api.Controllers
 
         //GET  /users
         [HttpGet]
-        public ActionResult<IEnumerable<UserModel>> FindAll()
+        public async Task<ActionResult<IEnumerable<UserModel>>> FindAll()
         {
             _logger.LogInformation("Pegando todos os usuarios cadastrados no banco route: GET: /users", DateTime.UtcNow.ToLongTimeString());
-            return _iuserRepository.FindAll();
+            return await _iuserRepository.FindAll();
+         
         }
+
+
+
 
         //GET  /users/id
         [HttpGet("{id}")]
