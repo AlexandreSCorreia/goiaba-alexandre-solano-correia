@@ -2,6 +2,7 @@
 {
     public class UserRepository : IUserRepository
     {
+        
         public bool Create(UserModel user)
         {
             throw new NotImplementedException();

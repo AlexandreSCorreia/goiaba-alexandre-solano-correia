@@ -13,7 +13,7 @@ namespace goiaba_api.Models
         public int Id { get; set; }
         [Required(ErrorMessage = "O campo primeiro nome é obrigatorio")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O primeiro nome deve ter no minimo 3 caracteres e no maximo 50 caracteres")]
-        public string Firstname { get; set; }
+        public string FirstName { get; set; }
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O sobrenome deve ter no minimo 3 caracteres e no maximo 50 caracteres")]
         public string Surname { get; set; }
         [Required(ErrorMessage ="O campo age é obrigatorio")]
