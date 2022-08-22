@@ -31,10 +31,10 @@ namespace goiaba_api.Teste
 
 
         [Theory]
-        [InlineData(1)]
-        [InlineData(2)]
-        [InlineData(3)]
-        public void TestaFindUserMock(int id)
+        [InlineData("b4f5b-b4f5b-b4f5b-b4f5b-b4f5b")]
+        [InlineData("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a")]
+        [InlineData("b4f5c-b4f5c-b4f5c-b4f5c-b4f5c")]
+        public void TestaFindUserMock(string id)
         {
             // Arrange
             var repositorioMock = new GoiabaAPIRepository();
@@ -52,11 +52,9 @@ namespace goiaba_api.Teste
             // Arrange
             var user = new UserModel()
             {
-                Id = 4,
                 FirstName = "Noa",
                 Surname = "Oliveira",
-                Age = 13,
-                CreationDate = DateTime.Now
+                Age = 13
             };
 
             var repositorioMock = new GoiabaAPIRepository();
@@ -83,9 +81,10 @@ namespace goiaba_api.Teste
             var repositorioMock = new GoiabaAPIRepository();
 
             //Act
-            var result = repositorioMock.Update(2, user);
+            var result = repositorioMock.Update("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a", user);
 
             //Assert
+            Assert.Equal("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a", result.Id);
             Assert.Equal(user.FirstName, result.FirstName);
             Assert.Equal(user.Surname, result.Surname);
             Assert.Equal(user.Age, result.Age);
@@ -93,9 +92,9 @@ namespace goiaba_api.Teste
         }
 
         [Theory]
-        [InlineData(1)]
-        [InlineData(3)]
-        public void TestarDestroyUserMock(int id)
+        [InlineData("b4f5b-b4f5b-b4f5b-b4f5b-b4f5b")]
+        [InlineData("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a")]
+        public void TestarDestroyUserMock(string id)
         {
             // Arrange
             var repositorioMock = new GoiabaAPIRepository();
@@ -117,7 +116,7 @@ namespace goiaba_api.Teste
 
             //Act     
             //Assert
-            Assert.Throws<Exception>(() => repositorioMock.Find(33));
+            Assert.Throws<Exception>(() => repositorioMock.Find("b4f5a-b4f5a-b4f5a-b4f5a-b4f5k"));
 
         }
 

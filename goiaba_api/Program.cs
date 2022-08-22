@@ -1,4 +1,5 @@
 using goiaba_api.Models;
+using goiaba_api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 
 var conexao = builder.Configuration.GetConnectionString("DefaultConnection");
+//var conexao = builder.Configuration.GetConnectionString("DefaultConnectionTest");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(conexao));
@@ -25,6 +27,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+DatabaseManagementService.MigrationInitialisation(app);
 
 app.UseHttpsRedirection();
 

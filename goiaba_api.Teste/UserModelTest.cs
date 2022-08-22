@@ -13,6 +13,7 @@ namespace goiaba_api.Teste
         public void CriarObjetoUserValido()
         {
             //Arrange
+            string id = Guid.NewGuid().ToString();
             string firstName = "Cliente 01";
             string surname = "Sobrenome";
             int age = 22;
@@ -21,6 +22,7 @@ namespace goiaba_api.Teste
             //Act
             var user = new UserModel()
             {
+                Id = id,
                 FirstName = firstName,
                 Surname = surname,
                 Age = age,
@@ -30,6 +32,7 @@ namespace goiaba_api.Teste
 
 
             //Assert
+            Assert.Equal(id, user.Id);
             Assert.Equal(firstName, user.FirstName);
             Assert.Equal(surname, user.Surname);
             Assert.Equal(age, user.Age);

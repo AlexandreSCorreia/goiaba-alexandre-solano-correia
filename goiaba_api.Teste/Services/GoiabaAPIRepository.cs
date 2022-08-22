@@ -14,27 +14,30 @@ namespace goiaba_api.Teste.Services
         {
             new UserModel
             {
-              FirstName = "Bruce",
-              Surname = "Kent",
+              PkUser = 1,
+              FirstName = "Cliente 1",
+              Surname = "Sobrenome",
               Age = 15,
               CreationDate = DateTime.Now,
-              Id = 1
+              Id = "b4f5a-b4f5a-b4f5a-b4f5a-b4f5a"
             },
             new UserModel
             {
-              FirstName = "Marta",
-              Surname = "Silva",
+              PkUser = 2,
+              FirstName = "Cliente 2",
+              Surname = "Sobrenome 2",
               Age = 25,
               CreationDate = DateTime.Now,
-              Id = 2
+              Id = "b4f5b-b4f5b-b4f5b-b4f5b-b4f5b"
             },
             new UserModel
             {
-              FirstName = "Hélio",
-              Surname = "Lopes",
+              PkUser = 3,
+              FirstName = "Cliente 3",
+              Surname = "Sobrenome 3",
               Age = 37,
               CreationDate = DateTime.Now,
-              Id = 3
+              Id = "b4f5c-b4f5c-b4f5c-b4f5c-b4f5c"
             }
         };
 
@@ -45,7 +48,7 @@ namespace goiaba_api.Teste.Services
             return this.users;
         }
 
-        public UserModel Find(int id)
+        public UserModel Find(string id)
         {
             try
             {
@@ -68,6 +71,10 @@ namespace goiaba_api.Teste.Services
         {
             try
             {
+                int count = this.Users.Count;
+                user.PkUser = count++;
+                user.Id = Guid.NewGuid().ToString();
+                user.CreationDate = DateTime.Now;
                 this.Users.Add(user);
                 var useritem = this.users.FirstOrDefault(p => p.Id == user.Id);
 
@@ -88,7 +95,7 @@ namespace goiaba_api.Teste.Services
         }//End Create
 
 
-        public UserModel Update(int id, UserModel user) 
+        public UserModel Update(string id, UserModel user) 
         {
             var useritem = this.users.FirstOrDefault(p => p.Id == id);
 
@@ -108,7 +115,7 @@ namespace goiaba_api.Teste.Services
         }
 
 
-        public bool Destroy(int id)
+        public bool Destroy(string id)
         {
             var useritem = this.users.FirstOrDefault(p => p.Id == id);
             if (useritem == null) 

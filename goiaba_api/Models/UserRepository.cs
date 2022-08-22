@@ -17,12 +17,12 @@ namespace goiaba_api.Models
             throw new NotImplementedException();
         }
 
-        public bool Destroy(int id)
+        public bool Destroy(string id)
         {
             throw new NotImplementedException();
         }
 
-        public UserModel Find(int id)
+        public UserModel Find(string id)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +33,7 @@ namespace goiaba_api.Models
            
         }
 
-        public bool Update(int id, UserModel user)
+        public bool Update(string id, UserModel user)
         {
             throw new NotImplementedException();
         }

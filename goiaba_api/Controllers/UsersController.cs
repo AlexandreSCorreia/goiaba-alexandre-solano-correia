@@ -33,7 +33,7 @@ namespace goiaba_api.Controllers
 
         //GET  /users/id
         [HttpGet("{id}")]
-        public ActionResult<UserModel> Find(int id)
+        public ActionResult<UserModel> Find(string id)
         {
             _logger.LogInformation($"Recuperando usuario por id: {id}", DateTime.UtcNow.ToLongTimeString());
             var userItem = _iuserRepository.Find(id);
@@ -67,7 +67,7 @@ namespace goiaba_api.Controllers
 
         //PUT /Users/{id}
         [HttpPut("{id}")]
-        public ActionResult Update(int id, UserModel user)
+        public ActionResult Update(string id, UserModel user)
         {
             if (id != user.Id)
             {

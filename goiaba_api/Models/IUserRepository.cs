@@ -3,9 +3,9 @@
     public interface IUserRepository
     {
         public Task<List<UserModel>> FindAll();
-        public UserModel Find(int id);
+        public UserModel Find(string id);
         public bool Create(UserModel user);
-        public bool Update(int id, UserModel user);
-        public bool Destroy(int id);
+        public bool Update(string id, UserModel user);
+        public bool Destroy(string id);
     }
 }
