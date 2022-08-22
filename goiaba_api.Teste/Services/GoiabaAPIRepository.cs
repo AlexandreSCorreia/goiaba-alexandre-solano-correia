@@ -14,7 +14,6 @@ namespace goiaba_api.Teste.Services
         {
             new UserModel
             {
-              PkUser = 1,
               FirstName = "Cliente 1",
               Surname = "Sobrenome",
               Age = 15,
@@ -23,7 +22,6 @@ namespace goiaba_api.Teste.Services
             },
             new UserModel
             {
-              PkUser = 2,
               FirstName = "Cliente 2",
               Surname = "Sobrenome 2",
               Age = 25,
@@ -32,7 +30,6 @@ namespace goiaba_api.Teste.Services
             },
             new UserModel
             {
-              PkUser = 3,
               FirstName = "Cliente 3",
               Surname = "Sobrenome 3",
               Age = 37,
@@ -71,10 +68,6 @@ namespace goiaba_api.Teste.Services
         {
             try
             {
-                int count = this.Users.Count;
-                user.PkUser = count++;
-                user.Id = Guid.NewGuid().ToString();
-                user.CreationDate = DateTime.Now;
                 this.Users.Add(user);
                 var useritem = this.users.FirstOrDefault(p => p.Id == user.Id);
 

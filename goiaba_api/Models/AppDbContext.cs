@@ -9,5 +9,7 @@ namespace goiaba_api.Models
         }
 
         public DbSet<UserModel> Users { get; set; }
+
+        
     }
 }

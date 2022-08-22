@@ -12,19 +12,23 @@ namespace goiaba_api.Models
     {
         [Key]
         [Required]
-        public int PkUser { get; set; }
-        public string Id { get; set; }
-        [Required(ErrorMessage = "O campo primeiro nome é obrigatorio")]
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+
+        [Required(ErrorMessage = "O campo primeiro nome e obrigatorio")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O primeiro nome deve ter no minimo 3 caracteres e no maximo 50 caracteres")]
         public string FirstName { get; set; }
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "O sobrenome deve ter no minimo 3 caracteres e no maximo 50 caracteres")]
-        public string Surname { get; set; }
-        [Required(ErrorMessage = "O campo age é obrigatorio")]
+
+        [Required(ErrorMessage = "O campo age e obrigatorio")]
+        [Range(1,150)]
         public int Age { get; set; }
         
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "O sobrenome deve ter no minimo 3 caracteres e no maximo 50 caracteres")]
+        public string Surname { get; set; } = "";
+
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mmZ}", ApplyFormatInEditMode = true)]
-        public DateTime CreationDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ssZ}", ApplyFormatInEditMode = true)]
+        public DateTime CreationDate { get; set; } = DateTime.Now;
+        
 
 
     }

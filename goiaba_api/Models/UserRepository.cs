@@ -12,30 +12,83 @@ namespace goiaba_api.Models
             _context = context;
         }
 
-        public bool Create(UserModel user)
+        public async Task<List<UserModel>> FindAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public bool Destroy(string id)
-        {
-            throw new NotImplementedException();
+            return await _context.Users.ToListAsync();
         }
 
         public UserModel Find(string id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var cliente = _context.Users.FirstOrDefault(p => p.Id == id);
+                if (cliente == null)
+                {
+                    throw new Exception($"User com Id = {id} não encontrado.");
+                }
+                return cliente;
+            }
+            catch
+            {
+                throw new Exception($"Erro ao obter user com Id = {id}.");
+            }
         }
 
-        public async Task<List<UserModel>> FindAll()
+
+        public bool Create(UserModel user)
         {
-            return await _context.Users.ToListAsync();
-           
+            try
+            {
+                _context.Users.Add(user);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool Update(string id, UserModel user)
         {
-            throw new NotImplementedException();
+             try
+            {
+                if (id != user.Id)
+                {
+                    return false;
+                }
+                _context.Entry(user).State = EntityState.Modified;
+                _context.SaveChanges();
+                return true;
+            }
+            catch{
+                return false;
+            }
         }
+
+        public bool Destroy(string id)
+        {
+            var userItem = _context.Users.FirstOrDefault(p => p.Id == id);
+
+            try
+            {
+                if (userItem == null)
+                {
+                    return false;
+                }
+                _context.Users.Remove(userItem);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
+
+
     }
 }

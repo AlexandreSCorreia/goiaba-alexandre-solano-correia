@@ -12,7 +12,7 @@ using goiaba_api.Models;
 namespace goiaba_api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220822154636_CreateTableUser")]
+    [Migration("20220822201418_CreateTableUser")]
     partial class CreateTableUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,17 +26,16 @@ namespace goiaba_api.Migrations
 
             modelBuilder.Entity("goiaba_api.Models.UserModel", b =>
                 {
-                    b.Property<int>("PkUser")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PkUser"), 1L, 1);
+                    b.Property<string>("Id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Age")
                         .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreationDate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
@@ -44,15 +43,11 @@ namespace goiaba_api.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Surname")                      
+                    b.Property<string>("Surname")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("PkUser");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });

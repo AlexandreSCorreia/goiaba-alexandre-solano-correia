@@ -24,12 +24,10 @@ namespace goiaba_api.Controllers
         public async Task<ActionResult<IEnumerable<UserModel>>> FindAll()
         {
             _logger.LogInformation("Pegando todos os usuarios cadastrados no banco route: GET: /users", DateTime.UtcNow.ToLongTimeString());
-            return await _iuserRepository.FindAll();
-         
+            List<UserModel> lista = await _iuserRepository.FindAll();
+            var listaOrdernada = lista.OrderBy(x => x.CreationDate).ToList();
+            return listaOrdernada;
         }
-
-
-
 
         //GET  /users/id
         [HttpGet("{id}")]
@@ -50,20 +48,36 @@ namespace goiaba_api.Controllers
 
         //POST /users
         [HttpPost]
-        public ActionResult<UserModel> Create(UserModel user)
+        public ActionResult<UserModel> Create([FromBody] UserModel user)
         {
-  
-            bool result = _iuserRepository.Create(user);
+            _logger.LogInformation("Acessando rota: POST: /users", DateTime.UtcNow.ToLongTimeString());
+
+
+            var userItem = new UserModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                Surname = user.Surname,
+                Age = user.Age,
+                CreationDate = user.CreationDate
+            };
+
+            bool result = _iuserRepository.Create(userItem);
 
             if (result)
             {
-                return CreatedAtAction("Find", new UserModel { Id = user.Id }, user);
+                _logger.LogInformation("Acessando rota: POST: /users, usuario criado com sucesso", DateTime.UtcNow.ToLongTimeString());
+                return CreatedAtAction("Find", new UserModel { Id = userItem.Id }, userItem);
+
             }
 
-    
+            _logger.LogError("Acessando rota: POST: /users, não foi possivel cadastrar usuario", DateTime.UtcNow.ToLongTimeString());
             return BadRequest(ModelState);
 
         }
+
+
+
 
         //PUT /Users/{id}
         [HttpPut("{id}")]
@@ -80,14 +94,20 @@ namespace goiaba_api.Controllers
 
 
         //DELETE /Users/{id}
-     /*   [HttpDelete("{id}")]
-        public ActionResult<UserModel> Destroy(int id)
+        [HttpDelete("{id}")]
+        public ActionResult<String> Destroy(String id)
         {
 
-           _iuserRepository.Destroy(id);
-     
+            var result = _iuserRepository.Destroy(id);
 
-        }*/
+            if (result == false)
+            {
+                return NotFound();
+            }
+
+            return Ok($"Usuario deletado com sucesso ID: {id}");
+
+        }
 
     }
 }
