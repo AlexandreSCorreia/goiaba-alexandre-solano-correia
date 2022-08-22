@@ -230,11 +230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\goiaba_api\\goiaba_api\\goiaba_api.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Music\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.csproj",
       "projectName": "goiaba_api",
-      "projectPath": "C:\\Users\\user\\source\\repos\\goiaba_api\\goiaba_api\\goiaba_api.csproj",
+      "projectPath": "C:\\Users\\user\\Music\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\goiaba_api\\goiaba_api\\obj\\",
+      "outputPath": "C:\\Users\\user\\Music\\goiaba-alexandre-solano-correia\\goiaba_api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
