@@ -2,7 +2,7 @@
 {
     public interface IUserRepository
     {
-        public Task<List<UserModel>> FindAll();
+        public List<UserModel> FindAll();
         public UserModel Find(string id);
         public bool Create(UserModel user);
         public bool Update(string id, UserModel user);

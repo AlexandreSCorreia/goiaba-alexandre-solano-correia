@@ -1,6 +1,6 @@
 ﻿using goiaba_api.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace goiaba_api.Controllers
 {
@@ -21,34 +21,43 @@ namespace goiaba_api.Controllers
 
         //GET  /users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserModel>>> FindAll()
+        public IEnumerable<UserModel> FindAll()
         {
             _logger.LogInformation("Pegando todos os usuarios cadastrados no banco route: GET: /users", DateTime.UtcNow.ToLongTimeString());
-            List<UserModel> lista = await _iuserRepository.FindAll();
-            var listaOrdernada = lista.OrderBy(x => x.CreationDate).ToList();
-            return listaOrdernada;
+            List<UserModel> lista = _iuserRepository.FindAll();
+            if (lista.Count > 0)
+            {
+                var listaOrdernada = lista.OrderBy(x => x.CreationDate).ToList();
+                return listaOrdernada;
+            }
+
+            return lista;
         }
 
         //GET  /users/id
         [HttpGet("{id}")]
-        public ActionResult<UserModel> Find(string id)
+        public IActionResult Find(string id)
         {
             _logger.LogInformation($"Recuperando usuario por id: {id}", DateTime.UtcNow.ToLongTimeString());
-            var userItem = _iuserRepository.Find(id);
-
-
-            if (userItem == null)
+            try
             {
-                _logger.LogWarning($"User ID: {id} não encontrado", DateTime.UtcNow.ToLongTimeString());
-                return NotFound();
+                var userItem = _iuserRepository.Find(id);
+                if (userItem != null)
+                {
+                    return Ok(userItem);
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"User ID: {id} não encontrado.\nError: {e.Message}", DateTime.UtcNow.ToLongTimeString());
             }
 
-            return Ok(userItem);
+            return NotFound();
         }
 
         //POST /users
         [HttpPost]
-        public ActionResult<UserModel> Create([FromBody] UserModel user)
+        public IActionResult Create([FromBody] UserModel user)
         {
             _logger.LogInformation("Acessando rota: POST: /users", DateTime.UtcNow.ToLongTimeString());
 
@@ -67,7 +76,7 @@ namespace goiaba_api.Controllers
             if (result)
             {
                 _logger.LogInformation("Acessando rota: POST: /users, usuario criado com sucesso", DateTime.UtcNow.ToLongTimeString());
-                return CreatedAtAction("Find", new UserModel { Id = userItem.Id }, userItem);
+                return CreatedAtAction(nameof(Find), new { Id = userItem.Id }, userItem);
 
             }
 
@@ -77,19 +86,20 @@ namespace goiaba_api.Controllers
         }
 
 
-
-
         //PUT /Users/{id}
         [HttpPut("{id}")]
-        public ActionResult Update(string id, UserModel user)
+        public IActionResult Update(string id, [FromBody] UserModel user)
         {
-            if (id != user.Id)
+            _logger.LogInformation("Acessando rota: PUT: /users/{id}", DateTime.UtcNow.ToLongTimeString());
+            bool result =_iuserRepository.Update(id, user);
+            if (result == true)
             {
-                return BadRequest();
+                 _logger.LogInformation("Rota: PUT: /users/{id} usuario atualizado com sucesso", DateTime.UtcNow.ToLongTimeString());
+                return NoContent();
             }
-
-            _iuserRepository.Update(id, user);
-            return NoContent();
+            _logger.LogWarning($"Não foi possivel atualizar o usuario: {id}", DateTime.UtcNow.ToLongTimeString());
+            return NotFound();
+            
         }
 
 
@@ -97,15 +107,17 @@ namespace goiaba_api.Controllers
         [HttpDelete("{id}")]
         public ActionResult<String> Destroy(String id)
         {
-
+            _logger.LogInformation("Acessando rota DELETE: /Users/{id}", DateTime.UtcNow.ToLongTimeString());
             var result = _iuserRepository.Destroy(id);
 
             if (result == false)
             {
+                _logger.LogError($"User {id} não encontrado ou ocorreu um erro ao tentar deletar o user", DateTime.UtcNow.ToLongTimeString());
                 return NotFound();
             }
 
-            return Ok($"Usuario deletado com sucesso ID: {id}");
+            _logger.LogInformation("Usuario deletado com sucesso ID: {id}", DateTime.UtcNow.ToLongTimeString());
+            return NoContent();
 
         }
 
