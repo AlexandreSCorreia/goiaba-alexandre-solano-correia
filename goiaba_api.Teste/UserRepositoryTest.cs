@@ -1,19 +1,13 @@
 ﻿using goiaba_api.Models;
 using goiaba_api.Teste.Services;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace goiaba_api.Teste
 {
     public class UserRepositoryTest
     {
 
-        // Testes com Mock
         [Fact]
         public void TestarFindAllUsersMock()
         {
@@ -84,10 +78,7 @@ namespace goiaba_api.Teste
             var result = repositorioMock.Update("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a", user);
 
             //Assert
-            Assert.Equal("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a", result.Id);
-            Assert.Equal(user.FirstName, result.FirstName);
-            Assert.Equal(user.Surname, result.Surname);
-            Assert.Equal(user.Age, result.Age);
+            Assert.True(result);
 
         }
 

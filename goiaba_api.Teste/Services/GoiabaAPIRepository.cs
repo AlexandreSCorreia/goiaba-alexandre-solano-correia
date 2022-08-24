@@ -1,15 +1,11 @@
 ﻿using goiaba_api.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace goiaba_api.Teste.Services
 {
     public class GoiabaAPIRepository : IGoiabaAPIRepository
     {
-        
+
         private List<UserModel> users = new List<UserModel>()
         {
             new UserModel
@@ -61,7 +57,7 @@ namespace goiaba_api.Teste.Services
             {
                 throw new Exception($"Erro ao obter user com Id = {id}.");
             }
-      
+
         }
 
         public bool Create(UserModel user)
@@ -75,9 +71,9 @@ namespace goiaba_api.Teste.Services
                 {
                     return false;
                 }
-               
+
                 return true;
-                
+
             }
             catch (Exception)
             {
@@ -85,39 +81,54 @@ namespace goiaba_api.Teste.Services
                 return false;
             }
 
-        }//End Create
+        }
 
 
-        public UserModel Update(string id, UserModel user) 
+        public bool Update(string id, UserModel user)
         {
-            var useritem = this.users.FirstOrDefault(p => p.Id == id);
-
-            if (useritem == null)
+            try
             {
-                return null;
-            }
+                var useritem = this.users.FirstOrDefault(p => p.Id == id);
 
-            foreach (var item in this.Users.Where(x => x.FirstName == useritem.FirstName))
+                if (useritem == null)
+                {
+                    return false;
+                }
+
+                foreach (var item in this.Users.Where(x => x.FirstName == useritem.FirstName))
+                {
+                    item.FirstName = user.FirstName;
+                    item.Surname = user.Surname;
+                    item.Age = user.Age;
+                }
+
+                return true;
+
+            }
+            catch
             {
-                item.FirstName = user.FirstName;
-                item.Surname = user.Surname;
-                item.Age = user.Age;
+                return false;
             }
-
-            return this.users.FirstOrDefault(p => p.Id == id);
         }
 
 
         public bool Destroy(string id)
         {
-            var useritem = this.users.FirstOrDefault(p => p.Id == id);
-            if (useritem == null) 
+            try
+            {
+                var useritem = this.users.FirstOrDefault(p => p.Id == id);
+                if (useritem == null)
+                {
+                    return false;
+                }
+
+                return this.Users.Remove(useritem);
+            }
+            catch
             {
                 return false;
             }
 
-            return this.Users.Remove(useritem);
-        
         }
 
     }

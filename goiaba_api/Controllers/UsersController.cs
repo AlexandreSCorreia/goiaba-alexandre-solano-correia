@@ -64,11 +64,9 @@ namespace goiaba_api.Controllers
 
             var userItem = new UserModel
             {
-                Id = user.Id,
                 FirstName = user.FirstName,
                 Surname = user.Surname,
-                Age = user.Age,
-                CreationDate = user.CreationDate
+                Age = user.Age
             };
 
             bool result = _iuserRepository.Create(userItem);
@@ -107,7 +105,7 @@ namespace goiaba_api.Controllers
         [HttpDelete("{id}")]
         public ActionResult<String> Destroy(String id)
         {
-            _logger.LogInformation("Acessando rota DELETE: /Users/{id}", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogInformation("Acessando rota DELETE: /Users/{id} ", DateTime.UtcNow.ToLongTimeString());
             var result = _iuserRepository.Destroy(id);
 
             if (result == false)
@@ -116,7 +114,7 @@ namespace goiaba_api.Controllers
                 return NotFound();
             }
 
-            _logger.LogInformation("Usuario deletado com sucesso ID: {id}", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogInformation($"Usuario deletado com sucesso ID: {id}", DateTime.UtcNow.ToLongTimeString());
             return NoContent();
 
         }

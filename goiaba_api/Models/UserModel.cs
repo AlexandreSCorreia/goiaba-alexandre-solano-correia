@@ -18,11 +18,9 @@ namespace goiaba_api.Models
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O primeiro nome deve ter no minimo 3 caracteres e no maximo 50 caracteres")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "O campo age e obrigatorio")]
-        [Range(1,150)]
+        [Range(1,150, ErrorMessage ="O campo Idade deve estar entre 1 e 150.")]
         public int Age { get; set; }
         
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "O sobrenome deve ter no minimo 3 caracteres e no maximo 50 caracteres")]
         public string Surname { get; set; } = "";
 
         [DataType(DataType.Date)]
