@@ -1,9 +1,5 @@
 ﻿using goiaba_api.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace goiaba_api.Teste
 {
@@ -39,6 +35,6 @@ namespace goiaba_api.Teste
             Assert.Equal(data, user.CreationDate);
  
 
-        }//End CriarObjetoUserValido
+        }
     }
 }

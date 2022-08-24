@@ -49,13 +49,13 @@ namespace goiaba_api.Teste.Services
 
                 if (user == null)
                 {
-                    throw new Exception($"User com Id = {id} não encontrado.");
+                    throw new Exception($"User with Id = {id} not found.");
                 }
                 return user;
             }
             catch
             {
-                throw new Exception($"Erro ao obter user com Id = {id}.");
+                throw new Exception($"Error getting user with Id = {id}.");
             }
 
         }

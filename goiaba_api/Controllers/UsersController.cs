@@ -23,22 +23,22 @@ namespace goiaba_api.Controllers
         [HttpGet]
         public IEnumerable<UserModel> FindAll()
         {
-            _logger.LogInformation("Pegando todos os usuarios cadastrados no banco route: GET: /users", DateTime.UtcNow.ToLongTimeString());
-            List<UserModel> lista = _iuserRepository.FindAll();
-            if (lista.Count > 0)
+            _logger.LogInformation("Getting all users registered in the bank route: GET: /users ", DateTime.UtcNow.ToLongTimeString());
+            List<UserModel> list = _iuserRepository.FindAll();
+            if (list.Count > 0)
             {
-                var listaOrdernada = lista.OrderBy(x => x.CreationDate).ToList();
-                return listaOrdernada;
+                var orderedList = list.OrderBy(x => x.CreationDate).ToList();
+                return orderedList;
             }
 
-            return lista;
+            return list;
         }
 
         //GET  /users/id
         [HttpGet("{id}")]
         public IActionResult Find(string id)
         {
-            _logger.LogInformation($"Recuperando usuario por id: {id}", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogInformation($"Retrieving user by id: {id} ", DateTime.UtcNow.ToLongTimeString());
             try
             {
                 var userItem = _iuserRepository.Find(id);
@@ -49,7 +49,7 @@ namespace goiaba_api.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogError($"User ID: {id} não encontrado.\nError: {e.Message}", DateTime.UtcNow.ToLongTimeString());
+                _logger.LogError($"User ID: {id} not found.\nError: {e.Message} ", DateTime.UtcNow.ToLongTimeString());
             }
 
             return NotFound();
@@ -59,7 +59,7 @@ namespace goiaba_api.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] UserModel user)
         {
-            _logger.LogInformation("Acessando rota: POST: /users", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogInformation("Accessing route: POST: /users ", DateTime.UtcNow.ToLongTimeString());
 
 
             var userItem = new UserModel
@@ -73,12 +73,12 @@ namespace goiaba_api.Controllers
 
             if (result)
             {
-                _logger.LogInformation("Acessando rota: POST: /users, usuario criado com sucesso", DateTime.UtcNow.ToLongTimeString());
+                _logger.LogInformation("Accessing route: POST: /users, user created successfully", DateTime.UtcNow.ToLongTimeString());
                 return CreatedAtAction(nameof(Find), new { Id = userItem.Id }, userItem);
 
             }
 
-            _logger.LogError("Acessando rota: POST: /users, não foi possivel cadastrar usuario", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogError("Accessing route: POST: /users, could not register user", DateTime.UtcNow.ToLongTimeString());
             return BadRequest(ModelState);
 
         }
@@ -88,14 +88,14 @@ namespace goiaba_api.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(string id, [FromBody] UserModel user)
         {
-            _logger.LogInformation("Acessando rota: PUT: /users/{id}", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogInformation("Accessing route: PUT: /users/{id}", DateTime.UtcNow.ToLongTimeString());
             bool result =_iuserRepository.Update(id, user);
             if (result == true)
             {
-                 _logger.LogInformation("Rota: PUT: /users/{id} usuario atualizado com sucesso", DateTime.UtcNow.ToLongTimeString());
+                 _logger.LogInformation("Route: PUT: /users/{id} user updated successfully", DateTime.UtcNow.ToLongTimeString());
                 return NoContent();
             }
-            _logger.LogWarning($"Não foi possivel atualizar o usuario: {id}", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogWarning($"Could not update user: {id}", DateTime.UtcNow.ToLongTimeString());
             return NotFound();
             
         }
@@ -105,16 +105,16 @@ namespace goiaba_api.Controllers
         [HttpDelete("{id}")]
         public ActionResult<String> Destroy(String id)
         {
-            _logger.LogInformation("Acessando rota DELETE: /Users/{id} ", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogInformation($"Acessando rota DELETE: /Users/{id} ", DateTime.UtcNow.ToLongTimeString());
             var result = _iuserRepository.Destroy(id);
 
             if (result == false)
             {
-                _logger.LogError($"User {id} não encontrado ou ocorreu um erro ao tentar deletar o user", DateTime.UtcNow.ToLongTimeString());
+                _logger.LogError($"User {id} not found or an error occurred while trying to delete the user", DateTime.UtcNow.ToLongTimeString());
                 return NotFound();
             }
 
-            _logger.LogInformation($"Usuario deletado com sucesso ID: {id}", DateTime.UtcNow.ToLongTimeString());
+            _logger.LogInformation($"User ID successfully deleted: {id}", DateTime.UtcNow.ToLongTimeString());
             return NoContent();
 
         }

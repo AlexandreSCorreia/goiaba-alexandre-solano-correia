@@ -9,7 +9,7 @@ namespace goiaba_api.Teste
     {
 
         [Fact]
-        public void TestarFindAllUsersMock()
+        public void TestFindAllUsersMock()
         {
             //Arange
             var goiabaAPIRepositoryMoc = new Mock<IGoiabaAPIRepository>();
@@ -28,41 +28,41 @@ namespace goiaba_api.Teste
         [InlineData("b4f5b-b4f5b-b4f5b-b4f5b-b4f5b")]
         [InlineData("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a")]
         [InlineData("b4f5c-b4f5c-b4f5c-b4f5c-b4f5c")]
-        public void TestaFindUserMock(string id)
+        public void TestFindUserMock(string id)
         {
             // Arrange
-            var repositorioMock = new GoiabaAPIRepository();
+            var repositoryMock = new GoiabaAPIRepository();
 
             //Act
-            var user = repositorioMock.Find(id);
+            var user = repositoryMock.Find(id);
 
             //Assert
             Assert.NotNull(user);
         }
 
         [Fact]
-        public void TestaCreateUserMock()
+        public void TestCreateUserMock()
         {
             // Arrange
             var user = new UserModel()
             {
-                FirstName = "Noa",
-                Surname = "Oliveira",
+                FirstName = "new name",
+                Surname = "new surname",
                 Age = 13
             };
 
-            var repositorioMock = new GoiabaAPIRepository();
+            var repositoryMock = new GoiabaAPIRepository();
 
             //Act
-            var adicionado = repositorioMock.Create(user);
+            var added = repositoryMock.Create(user);
 
             //Assert
-            Assert.True(adicionado);
+            Assert.True(added);
         }
 
 
         [Fact]
-        public void TestaUpdateUserMock()
+        public void TestUpdateUserMock()
         {
             // Arrange
             var user = new UserModel()
@@ -72,10 +72,10 @@ namespace goiaba_api.Teste
                 Age = 55,
             };
 
-            var repositorioMock = new GoiabaAPIRepository();
+            var repositoryMock = new GoiabaAPIRepository();
 
             //Act
-            var result = repositorioMock.Update("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a", user);
+            var result = repositoryMock.Update("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a", user);
 
             //Assert
             Assert.True(result);
@@ -85,13 +85,13 @@ namespace goiaba_api.Teste
         [Theory]
         [InlineData("b4f5b-b4f5b-b4f5b-b4f5b-b4f5b")]
         [InlineData("b4f5a-b4f5a-b4f5a-b4f5a-b4f5a")]
-        public void TestarDestroyUserMock(string id)
+        public void TestDestroyUserMock(string id)
         {
             // Arrange
-            var repositorioMock = new GoiabaAPIRepository();
+            var repositoryMock = new GoiabaAPIRepository();
 
             //Act
-            var result = repositorioMock.Destroy(id);
+            var result = repositoryMock.Destroy(id);
 
             //Assert
             Assert.True(result);
@@ -100,14 +100,14 @@ namespace goiaba_api.Teste
 
         //Exceções
         [Fact]
-        public void TestaExcecaoFindUser()
+        public void TestExcecaoFindUser()
         {
             //Arrange
-            var repositorioMock = new GoiabaAPIRepository();
+            var repositoryMock = new GoiabaAPIRepository();
 
             //Act     
             //Assert
-            Assert.Throws<Exception>(() => repositorioMock.Find("b4f5a-b4f5a-b4f5a-b4f5a-b4f5k"));
+            Assert.Throws<Exception>(() => repositoryMock.Find("b4f5a-b4f5a-b4f5a-b4f5a-b4f5k"));
 
         }
 

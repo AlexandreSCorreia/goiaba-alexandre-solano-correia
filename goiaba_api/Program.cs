@@ -3,6 +3,11 @@ using goiaba_api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+//teste
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+//fim teste
+
 
 // Add services to the container.
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -29,8 +34,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+try
+{
+    DatabaseManagementService.MigrationInitialisation(app);
+}
+catch(Exception e)
+{
+    app.Logger.LogError($"An error occurred while trying to start migrations\nError: {e.Message}", DateTime.UtcNow.ToLongTimeString());
+}
 
-DatabaseManagementService.MigrationInitialisation(app);
 
 app.UseHttpsRedirection();
 
