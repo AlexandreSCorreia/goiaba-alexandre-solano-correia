@@ -34,14 +34,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-try
-{
-    DatabaseManagementService.MigrationInitialisation(app);
-}
-catch(Exception e)
-{
-    app.Logger.LogError($"An error occurred while trying to start migrations\nError: {e.Message}", DateTime.UtcNow.ToLongTimeString());
-}
+
+DatabaseManagementService.MigrationInitialisation(app);
 
 
 app.UseHttpsRedirection();
