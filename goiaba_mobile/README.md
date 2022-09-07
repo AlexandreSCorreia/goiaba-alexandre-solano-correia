@@ -124,7 +124,7 @@ Um segundo teste foi testar o CRUD da aplicação, fazendo o teste das rotas da 
 
 - Acessar o aplicativo Mobile
 <p align="center">
-  <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/login01_.jpeg" width="200" height="400" alt="exemplo imagem">
 </p>
 
 - Clicar no link Register
@@ -230,7 +230,7 @@ Um segundo teste foi testar o CRUD da aplicação, fazendo o teste das rotas da 
 - Efetuar o logout, clicando no botão Logout
 <p align="center">
   <img src="sourceReadme/testeRegressivo/home07.jpeg" width="200" height="400" alt="exemplo imagem">
-   <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+   <img src="sourceReadme/testeRegressivo/login01_.jpeg" width="200" height="400" alt="exemplo imagem">
 </p>
 
 - Preencher o campo login com o ID
