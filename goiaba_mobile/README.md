@@ -8,8 +8,8 @@
 
 
 <p align="center">
-  <img src="sourceReadme/apresentacao/login01.jpeg" width="200" alt="exemplo imagem">
-  <img src="sourceReadme/apresentacao/register01.jpeg" width="200" alt="exemplo imagem">
+  <img src="sourceReadme/apresentacao/login01.jpeg" width="200" alt="view login">
+  <img src="sourceReadme/apresentacao/register01.jpeg" width="200" alt="view register">
 </p>
 
 
@@ -33,10 +33,10 @@
 <br>
 
 <p align="center">
-  <img src="sourceReadme/escopo/create/Capturar01.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/create/Capturar02.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/create/Capturar03.png" width="200" height="400" alt="exemplo imagem">
-  <img src="sourceReadme/escopo/create/Capturar04.png" width="600" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/escopo/create/Capturar01.PNG" width="200" height="400" alt="view register with data">
+  <img src="sourceReadme/escopo/create/Capturar02.PNG" width="200" height="400" alt="view register with notification">
+  <img src="sourceReadme/escopo/create/Capturar03.PNG" width="200" height="400" alt="view home">
+  <img src="sourceReadme/escopo/create/Capturar04.PNG" width="600" height="400" alt="print postman">
 </p>
 
 <br>
@@ -48,9 +48,9 @@
 <br>
 
 <p align="center">
-  <img src="sourceReadme/escopo/find/Capturar05.png" width="600" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/find/Capturar06.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/find/Capturar07.png" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/escopo/find/Capturar05.PNG" width="600" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/find/Capturar06.PNG" width="200" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/find/Capturar07.PNG" width="200" height="400" alt="exemplo imagem">
 </p>
 
 <br>
@@ -62,10 +62,10 @@
 <br>
 
 <p align="center">
-  <img src="sourceReadme/escopo/update/Capturar08.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/update/Capturar09.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/update/Capturar10.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/update/Capturar11.png" width="600" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/escopo/update/Capturar08.PNG" width="200" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/update/Capturar09.PNG" width="200" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/update/Capturar10.PNG" width="200" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/update/Capturar11.PNG" width="600" height="400" alt="exemplo imagem">
 </p>
 
 <br>
@@ -77,10 +77,10 @@
 <br>
 
 <p align="center">
-  <img src="sourceReadme/escopo/delete/Capturar12.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/delete/Capturar14.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/delete/Capturar15.png" width="200" height="400" alt="exemplo imagem">
- <img src="sourceReadme/escopo/delete/Capturar18.png" width="600" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/escopo/delete/Capturar12.PNG" width="200" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/delete/Capturar14.PNG"" width="200" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/delete/Capturar15.PNG"" width="200" height="400" alt="exemplo imagem">
+ <img src="sourceReadme/escopo/delete/Capturar18.PNG"" width="600" height="400" alt="exemplo imagem">
 </p>
 
 
