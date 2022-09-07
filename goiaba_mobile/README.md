@@ -123,49 +123,234 @@ Um segundo teste foi testar o CRUD da aplicação, fazendo o teste das rotas da 
 
 
 - Acessar o aplicativo Mobile
-- Clicar no link Register
-- Clicar no link Cancel
-- Clicar no link Register novamente
-- Preencher todos os campos
-- Clicar no botão Register
-- Clicar em No
-- Clicar novamente no botão Register
-- Clicar em Yes e acessar a tela Home
-- Acessar menu lateral
-- Acessar a tela de Profile, clicando no botão Profile
-- Editar todos os campos do usuário
-- Clicar em Update
-- Clicar em No
-- Clicar em Update novamente
-- Clicar em Yes e acessar a tela Home
-- Acessar menu lateral
-- Acessar a tela de Profile, clicando no botão Profile
-- Acessar menu lateral
-- Acessar a tela de Home, clicando no botão Home
-- Efetuar o logout, clicando no botão Logout
-- Preencher o campo login com o ID
-- Clicar em Login e acessar a tela Home
-- Clicar no menu lateral
-- Acessar a tela de Profile, clicando no botão Profile
-- Preencher apenas os campos obrigatórios
-- Clicar em Update
-- Clicar em No
-- Clicar em Update novamente
-- Clicar em Yes e acessar a tela Home
-- Acessar menu lateral
-- Acessar a tela de Profile, clicando no - botão Profile
-- Acessar a tela de Home, clicando no botão Home
-- Acessar a tela de Profile, clicando no - botão Profile
-- Clicar em Delete Account 
-- Clicar em No
-- Clicar novamente em Delete Account
-- Clicar em Yes
-- Efetuar o login com o id do perfil excluído
-- Clicar no link Register
-- Preencher apenas os campos obrigatórios
-- Clicar no botão Register e acessar a tela Home
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
 
-## Vídeo de apresentação ##
+- Clicar no link Register
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/login02.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar no link Cancel
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register02.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar no link Register novamente
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/login02.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Preencher todos os campos
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register03.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar no botão Register
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register04.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em No
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register05.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar novamente no botão Register
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register04.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Yes e acessar a tela Home
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register06.jpeg" width="200" height="400" alt="exemplo imagem">
+   <img src="sourceReadme/testeRegressivo/home01.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar menu lateral
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home02.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar a tela de Profile, clicando no botão Profile
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home03.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Editar todos os campos do usuário
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile02.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Update
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile03.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em No
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile04.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Update novamente
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile03.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Yes e acessar a tela Home
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile05.jpeg" width="200" height="400" alt="exemplo imagem">
+    <img src="sourceReadme/testeRegressivo/home04.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+
+- Acessar menu lateral
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home05.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar a tela de Profile, clicando no botão Profile
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home06.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/profile02.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar menu lateral
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile06.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar a tela de Home, clicando no botão Home
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile07.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/home04.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Efetuar o logout, clicando no botão Logout
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home07.jpeg" width="200" height="400" alt="exemplo imagem">
+   <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Preencher o campo login com o ID
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/login03.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Login e acessar a tela Home
+<p align="center">
+ <img src="sourceReadme/testeRegressivo/login04.jpeg" width="200" height="400" alt="exemplo imagem">
+
+  <img src="sourceReadme/testeRegressivo/home04.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar no menu lateral
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home05.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar a tela de Profile, clicando no botão Profile
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home06.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/profile02.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Preencher apenas os campos obrigatórios
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile08.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Update
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile09.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em No
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile04.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Update novamente
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile09.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Yes e acessar a tela Home
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile05.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/home08.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar menu lateral
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home09.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+
+- Acessar a tela de Profile, clicando no - botão Profile
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home10.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/profile08.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+
+- Acessar a tela de Home, clicando no botão Home
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile07.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/home08.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Acessar a tela de Profile, clicando no - botão Profile
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/home10.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/profile08.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+- Clicar em Delete Account 
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile10.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em No
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile11.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar novamente em Delete Account
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile10.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar em Yes
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/profile12.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Efetuar o login com o id do perfil excluído
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/login06.jpeg" width="200" height="400" alt="exemplo imagem">
+    <img src="sourceReadme/testeRegressivo/login05.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar no link Register
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Preencher apenas os campos obrigatórios
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register07.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+- Clicar no botão Register e acessar a tela Home.
+<p align="center">
+  <img src="sourceReadme/testeRegressivo/register08.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/register09.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/home11.jpeg" width="200" height="400" alt="exemplo imagem">
+</p>
+
+## Vídeo de apresentação do projeto ##
 
 Link do  YouTube : [Clique Aqui](https://youtu.be/cuUur7QkEdY)
 
