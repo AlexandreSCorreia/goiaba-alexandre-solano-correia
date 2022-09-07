@@ -328,14 +328,14 @@ Um segundo teste foi testar o CRUD da aplicação, fazendo o teste das rotas da 
 
 - Efetuar o login com o id do perfil excluído
 <p align="center">
-  <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/login01_.jpeg" width="200" height="400" alt="exemplo imagem">
   <img src="sourceReadme/testeRegressivo/login06.jpeg" width="200" height="400" alt="exemplo imagem">
     <img src="sourceReadme/testeRegressivo/login05.jpeg" width="200" height="400" alt="exemplo imagem">
 </p>
 
 - Clicar no link Register
 <p align="center">
-  <img src="sourceReadme/testeRegressivo/login01.jpeg" width="200" height="400" alt="exemplo imagem">
+  <img src="sourceReadme/testeRegressivo/login01_.jpeg" width="200" height="400" alt="exemplo imagem">
 </p>
 
 - Preencher apenas os campos obrigatórios
