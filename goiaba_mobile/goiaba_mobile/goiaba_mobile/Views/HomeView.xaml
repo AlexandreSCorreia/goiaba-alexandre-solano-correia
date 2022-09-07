@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:goiaba_mobile.ViewModels"       
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Home"
+             x:Class="goiaba_mobile.Views.HomeView">
+
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel></vm:HomeViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Welcome}"
+                x:Name="lblWelcome"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                FontSize="26"
+                FontAttributes="Bold" 
+                TextColor="#222"/>
+        </StackLayout>
+
+       
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Text="Logout" 
+            Command="{Binding LogoutCommand}"
+            IconImageSource="exit.png"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

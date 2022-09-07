@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Register"
+             BackgroundColor="#222"
+             Shell.NavBarIsVisible="False"
+             x:Class="goiaba_mobile.Views.RegistrationView">
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="12" Margin="50,15" VerticalOptions="Center">
+            
+            <Label 
+                HorizontalOptions="Center"
+                Text="Create your free account"
+                Margin="0,0,0,65"
+                FontSize="18"
+                FontAttributes="Bold" />
+            
+            <Label Text="First Name*:"></Label>
+            <Entry 
+                Placeholder="Enter your first name" 
+                x:Name="entFirstName"
+                PlaceholderColor="#C0C0C0"
+                TextColor="#C0C0C0"
+                Text="{Binding FirstName}" />
+
+            <Label Text="Surname:"></Label>
+            <Entry 
+                Placeholder="Enter your surname" 
+                x:Name="entSurname"
+                PlaceholderColor="#C0C0C0"
+                TextColor="#C0C0C0"
+                Text="{Binding Surname}"/>
+
+            <Label Text="Age*:"></Label>
+            <Entry 
+                Placeholder="Enter your age" 
+                x:Name="entAge"
+                Keyboard="Numeric"
+                Margin="0,0,0,15"
+                PlaceholderColor="#C0C0C0"
+                TextColor="#C0C0C0"
+                Text="{Binding Age}"/>
+
+            <Button Text="Register"
+                    CornerRadius="5"
+                    BackgroundColor="#29D8A1"
+                    TextColor="White"
+                    Command="{Binding RegisterCommand}"
+                    Margin="0,0,0,15"/>
+            
+            <Label Text="Cancel"
+                   x:Name="CancelBtn"
+                   TextColor="red"
+                   Margin="20"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                       Command="{Binding CancelRegister}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

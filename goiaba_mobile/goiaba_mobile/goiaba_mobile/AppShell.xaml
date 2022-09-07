@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pages="clr-namespace:goiaba_mobile.Views"
+             xmlns:local="clr-namespace:goiaba_mobile.Views"
+             mc:Ignorable="d"
+             FlyoutBehavior="Flyout"
+             Title="ShellGoiabaMobile"
+             x:Class="goiaba_mobile.AppShell">
+
+    <Shell.FlyoutHeader>
+        <pages:HeaderView></pages:HeaderView>
+    </Shell.FlyoutHeader>
+    
+    <ShellItem Route="login" Shell.FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:LoginView}"/>
+    </ShellItem>
+
+    <FlyoutItem 
+        Title="Home" 
+        Route="main" 
+        Icon="home.png">
+
+        <ShellContent 
+            ContentTemplate="{DataTemplate local:HomeView}" />
+    </FlyoutItem>
+
+    <FlyoutItem 
+        Title="Profile" 
+        Route="profile" 
+        Icon="profile.png">
+
+        <ShellContent 
+            ContentTemplate="{DataTemplate local:ProfileView}" />
+    </FlyoutItem>
+
+</Shell>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="goiaba_mobile.Views.HeaderView">
+  <ContentView.Content>
+
+        <Grid BackgroundColor="#0072B9" HeightRequest="200">
+            <!--
+            <Image Aspect="AspectFill" 
+                   Source=""
+                   Opacity="0.5" />
+            -->
+            <Label Text="Goiaba Mobile"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="26"/>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

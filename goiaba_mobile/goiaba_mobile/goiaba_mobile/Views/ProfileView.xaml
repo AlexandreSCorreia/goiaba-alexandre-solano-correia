@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Profile"
+             BackgroundColor="#222"
+             x:Class="goiaba_mobile.Views.ProfileView">
+
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="12" Margin="50,15" VerticalOptions="Center">
+
+            <Label 
+                HorizontalOptions="Center"
+                Text="Edit profile"
+                Margin="0,0,0,65"
+                FontSize="18"
+                FontAttributes="Bold" />
+
+            <Label Text="ID:"></Label>
+            <Entry 
+                x:Name="entId"
+                PlaceholderColor="#C0C0C0"
+                TextColor="#C0C0C0"
+                IsReadOnly="True"              
+                Text="{Binding Id}" />
+            
+            <Label Text="First Name:"></Label>
+            <Entry 
+                Placeholder="Enter your first name" 
+                x:Name="entFirstName"
+                PlaceholderColor="#C0C0C0"
+                TextColor="#C0C0C0"
+                Text="{Binding FirstName}" />
+            
+            <Label Text="Surname:"></Label>
+            <Entry 
+                Placeholder="Enter your surname" 
+                x:Name="entSurname"
+                PlaceholderColor="#C0C0C0"
+                TextColor="#C0C0C0"
+                Text="{Binding Surname}"/>
+            
+            <Label Text="Age:"></Label>
+            <Entry 
+                Placeholder="Enter your age" 
+                x:Name="entAge"
+                Keyboard="Numeric"
+                Margin="0,0,0,15"
+                PlaceholderColor="#C0C0C0"
+                TextColor="#C0C0C0"
+                Text="{Binding Age}"
+                />
+
+            <Button Text="Update"
+                    x:Name="btnUpdate"
+                    CornerRadius="5"
+                    BackgroundColor="#29D8A1"
+                    TextColor="White"
+                    Command="{Binding UpdateCommand}"
+                    Margin="0,0,0,10"/>
+
+            <Button Text="Delete account"
+                    CornerRadius="5"
+                    BackgroundColor="red"
+                    TextColor="White"
+                    Command="{Binding DeleteCommand}"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

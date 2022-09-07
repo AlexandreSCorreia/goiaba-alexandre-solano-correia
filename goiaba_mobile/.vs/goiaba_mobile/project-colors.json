@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "af657d2e-aaa6-4ffa-97c7-6a7f42056074": {
+      "ProjectGuid": "af657d2e-aaa6-4ffa-97c7-6a7f42056074",
+      "DisplayName": "goiaba_mobile",
+      "ColorIndex": 0
+    },
+    "29844059-3d25-4448-872d-5648922af1ce": {
+      "ProjectGuid": "29844059-3d25-4448-872d-5648922af1ce",
+      "DisplayName": "goiaba_mobile.Android",
+      "ColorIndex": 1
+    },
+    "72694abb-12fa-4675-83a0-81bcf48d5293": {
+      "ProjectGuid": "72694abb-12fa-4675-83a0-81bcf48d5293",
+      "DisplayName": "goiaba_mobile.Teste",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}
