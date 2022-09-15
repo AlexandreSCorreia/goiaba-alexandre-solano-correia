@@ -15,7 +15,7 @@ namespace goiaba_mobile.Views
         {
             InitializeComponent();
 
-            this.profileViewModel = new ProfileViewModel();
+            this.profileViewModel = Startup.ServiceProvider.GetService<ProfileViewModel>();
             this.BindingContext = this.profileViewModel;
         }
 

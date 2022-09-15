@@ -15,7 +15,7 @@ namespace goiaba_mobile.Views
         {
             InitializeComponent();
 
-            this.registrationViewModel = new RegistrationViewModel();
+            this.registrationViewModel = Startup.ServiceProvider.GetService<RegistrationViewModel>(); ;
             this.BindingContext = this.registrationViewModel;
         }
 

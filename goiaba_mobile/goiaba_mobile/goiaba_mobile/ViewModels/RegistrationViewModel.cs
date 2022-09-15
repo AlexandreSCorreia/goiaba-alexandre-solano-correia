@@ -4,13 +4,14 @@ using Xamarin.Forms;
 
 using goiaba_mobile.Models;
 using goiaba_mobile.Services;
+using goiaba_mobile.Repositories;
 
 namespace goiaba_mobile.ViewModels
 {
     public class RegistrationViewModel : BaseViewModel
     {
         private UserModel user { get; set; }
-        private GoiabaApi api { get; set; }
+        private readonly UserService userService;
 
         private string firstName;
 
@@ -54,9 +55,9 @@ namespace goiaba_mobile.ViewModels
 
         public ICommand CancelRegister { get; set; }
 
-        public RegistrationViewModel()
+        public RegistrationViewModel(IUserRepository userRepository)
         {
-            this.api = new GoiabaApi();
+            this.userService = new UserService(userRepository);
 
             RegisterCommand = new Command(() =>
             {
@@ -83,7 +84,7 @@ namespace goiaba_mobile.ViewModels
 
         public async void SaveUser()
         {
-            var user = await api.Create(this.user);
+            var user = await userService.Create(this.user);
 
             if (!string.IsNullOrEmpty(user.FirstName))
             {

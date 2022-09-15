@@ -12,6 +12,8 @@ namespace goiaba_mobile.Views
         public LoginView()
         {
             InitializeComponent();
+
+            this.BindingContext = Startup.ServiceProvider.GetService<LoginViewModel>();
         }
 
 

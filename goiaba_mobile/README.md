@@ -350,11 +350,39 @@ Um segundo teste foi testar o CRUD da aplicação, fazendo o teste das rotas da 
   <img src="sourceReadme/testeRegressivo/home11.jpeg" width="200" height="400" alt="exemplo imagem">
 </p>
 
+
 ## Vídeo de apresentação do projeto ##
 
 Link do  YouTube : [Clique Aqui](https://youtu.be/cuUur7QkEdY)
 
-[⬆ Voltar ao topo](#goiaba_mobile)<br>
+
+
+## Atualização 15/09/2022
+
+Foi subestituido GoiabaApi por uma nova camada, chamada Repositories,
+que será responsavel pela comunicação com o banco, realizando o CRUD.
+
+Em Services foi removido a Class GoiabaApi e a interface IGoiabaApi,
+Foi adicionado UserService e IUserService, que será responsavel por implementar
+as funções da class UserRepository.
+
+UserService recebe uma classe que implementa IUserRepository no contrutor,
+para resolver essa dependencia e outras que ocorrem no projeto, foi adicionado
+injeção de dependencia implementando as classes Startup e DependencyinjectionContainer, Startup tem um metodo statico chamado Init que é inicializado em App.xaml.cs.
+
+Em ViewModels foram feitas as alterações de acordo com as mudanças acima.
+
+
+No projeto de Teste com xUnit, o projeto foi alterado com a adição de novos testes e ajustado para utilizar dados Mocados ao inves de um banco real,
+assim foi removida a dependencia do deploy do ambiente para que os testes funcionem.
+
+Reutilizando a class UserService que recebe no construtor a class UserRepositoryMock que implementa a interface IUserRepository.
+
+## Resultado dos novos testes
+<p align="center">
+  <img src="sourceReadme/teste/printTesteAutomatizado_15092022.PNG" width="200" height="400" alt="Print Teste Automatizado dia 15/09/2022">
+</p>
+
 
 
 

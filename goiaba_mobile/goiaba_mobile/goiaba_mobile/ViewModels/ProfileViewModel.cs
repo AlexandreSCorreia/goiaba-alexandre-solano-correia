@@ -4,13 +4,14 @@ using Xamarin.Forms;
 
 using goiaba_mobile.Models;
 using goiaba_mobile.Services;
+using goiaba_mobile.Repositories;
 
 namespace goiaba_mobile.ViewModels
 {
     public class ProfileViewModel : BaseViewModel
     {
 
-        private GoiabaApi api;
+        private readonly UserService userService;
 
         private string id;
         public string Id
@@ -66,9 +67,9 @@ namespace goiaba_mobile.ViewModels
 
         public ICommand DeleteCommand { get; set; }
 
-        public ProfileViewModel()
+        public ProfileViewModel(IUserRepository userRepository)
         {
-            this.api = new GoiabaApi();
+            this.userService = new UserService(userRepository);
 
             UpdateCommand = new Command(() =>
             {
@@ -90,7 +91,7 @@ namespace goiaba_mobile.ViewModels
 
         public async void DeleteUser()
         {
-            var result = await api.Destroy(this.id);
+            var result = await userService.Destroy(this.id);
 
             if (result)
             {
@@ -114,7 +115,7 @@ namespace goiaba_mobile.ViewModels
                 Age = Convert.ToInt32(this.Age)
             };
 
-            var result = await api.Update(user);
+            var result = await userService.Update(user);
 
             if (result)
             {

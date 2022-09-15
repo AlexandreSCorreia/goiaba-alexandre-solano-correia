@@ -6,11 +6,10 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace goiaba_mobile.Services
+namespace goiaba_mobile.Repositories
 {
-    public class GoiabaApi : IGoiabaService
+    public class UserRepository : IUserRepository
     {
-
         const string URL = "http://192.168.0.10:8081/users";
 
         private HttpClient GetClient()
@@ -26,7 +25,7 @@ namespace goiaba_mobile.Services
         public async Task<List<UserModel>> FindAll()
         {
             HttpClient client = GetClient();
-           
+
             var response = await client.GetAsync(URL);
             if (response.IsSuccessStatusCode) //codigo 200
             {
@@ -40,10 +39,10 @@ namespace goiaba_mobile.Services
         public async Task<UserModel> Find(string Id)
         {
             String dados = URL + "/" + Id;
-            
+
             HttpClient client = GetClient();
             HttpResponseMessage response = await client.GetAsync(dados);
-            
+
             if (response.IsSuccessStatusCode) //codigo 200
             {
                 string content = await response.Content.ReadAsStringAsync();
@@ -58,7 +57,7 @@ namespace goiaba_mobile.Services
 
         public async Task<UserModel> Create(UserModel user)
         {
-            String dados = URL;     
+            String dados = URL;
             var json = JsonConvert.SerializeObject(new
             {
                 firstName = user.FirstName,
@@ -120,6 +119,5 @@ namespace goiaba_mobile.Services
 
             return false;
         }
-
     }
 }

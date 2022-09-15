@@ -12,6 +12,8 @@ namespace goiaba_mobile
         {
             InitializeComponent();
 
+            Startup.Init();
+
             MainPage = new AppShell();
         }
 

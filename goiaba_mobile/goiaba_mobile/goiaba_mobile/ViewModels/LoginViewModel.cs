@@ -6,14 +6,14 @@ using Xamarin.Forms;
 
 using goiaba_mobile.Models;
 using goiaba_mobile.Services;
-
+using goiaba_mobile.Repositories;
 
 namespace goiaba_mobile.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
 
-        private GoiabaApi api;
+        private readonly UserService userService;
 
         private string id;
         public string Id
@@ -32,15 +32,15 @@ namespace goiaba_mobile.ViewModels
         public ICommand RegisterSeCommand { get; private set; }
 
 
-        public LoginViewModel()
+        public LoginViewModel(IUserRepository userRepository)
         {
-            this.api = new GoiabaApi();
+            this.userService = new UserService(userRepository);
 
             try
             {
                 EntrarCommand = new Command(async () =>
                 {
-                    var user = await this.api.Find(this.Id);
+                    var user = await this.userService.Find(this.Id);
 
                     if (!string.IsNullOrEmpty(user.FirstName))
                     {
