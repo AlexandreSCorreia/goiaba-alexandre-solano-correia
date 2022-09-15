@@ -359,24 +359,18 @@ Link do  YouTube : [Clique Aqui](https://youtu.be/cuUur7QkEdY)
 
 ## Atualização 15/09/2022
 
-Foi subestituido GoiabaApi por uma nova camada, chamada Repositories,
-que será responsavel pela comunicação com o banco, realizando o CRUD.
+Foi substituído GoiabaApi por uma nova camada, chamada Repositories, que será responsável pela comunicação com o banco, realizando o CRUD.
 
-Em Services foi removido a Class GoiabaApi e a interface IGoiabaApi,
-Foi adicionado UserService e IUserService, que será responsavel por implementar
-as funções da class UserRepository.
+Em Services foi removido a Class GoiabaApi e a interface IGoiabaApi, Foi adicionado UserService e IUserService, que será responsável por implementar as funções da class UserRepository.
 
-UserService recebe uma classe que implementa IUserRepository no contrutor,
-para resolver essa dependencia e outras que ocorrem no projeto, foi adicionado
-injeção de dependencia implementando as classes Startup e DependencyinjectionContainer, Startup tem um metodo statico chamado Init que é inicializado em App.xaml.cs.
+UserService recebe uma classe que implementa IUserRepository no construtor, para resolver essa dependência e outras que ocorrem no projeto, foi adicionado injeção de dependência implementando as classes Startup e DependencyinjectionContainer, Startup tem um método estático chamado Init que é inicializado em App.xaml.cs.
 
 Em ViewModels foram feitas as alterações de acordo com as mudanças acima.
 
-
-No projeto de Teste com xUnit, o projeto foi alterado com a adição de novos testes e ajustado para utilizar dados Mocados ao inves de um banco real,
-assim foi removida a dependencia do deploy do ambiente para que os testes funcionem.
+No projeto de Teste com xUnit, o projeto foi alterado com a adição de novos testes e ajustado para utilizar dados Mocados ao invés de um banco real, assim foi removida a dependência do deploy do ambiente para que os testes funcionem.
 
 Reutilizando a class UserService que recebe no construtor a class UserRepositoryMock que implementa a interface IUserRepository.
+
 
 ## Resultado dos novos testes
 <p align="center">
