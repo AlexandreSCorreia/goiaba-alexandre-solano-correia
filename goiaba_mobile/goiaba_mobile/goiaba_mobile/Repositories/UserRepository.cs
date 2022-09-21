@@ -24,100 +24,135 @@ namespace goiaba_mobile.Repositories
 
         public async Task<List<UserModel>> FindAll()
         {
-            HttpClient client = GetClient();
-
-            var response = await client.GetAsync(URL);
-            if (response.IsSuccessStatusCode) //codigo 200
+            try
             {
-                string content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<UserModel>>(content);
-            }
+                HttpClient client = GetClient();
 
-            return new List<UserModel>();
+                var response = await client.GetAsync(URL);
+                if (response.IsSuccessStatusCode) //codigo 200
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<List<UserModel>>(content);
+                }
+
+                return new List<UserModel>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<UserModel> Find(string Id)
         {
-            String dados = URL + "/" + Id;
-
-            HttpClient client = GetClient();
-            HttpResponseMessage response = await client.GetAsync(dados);
-
-            if (response.IsSuccessStatusCode) //codigo 200
+            try
             {
-                string content = await response.Content.ReadAsStringAsync();
-                var user = JsonConvert.DeserializeObject<UserModel>(content);
+                String dados = URL + "/" + Id;
 
-                return user;
+                HttpClient client = GetClient();
+                HttpResponseMessage response = await client.GetAsync(dados);
+
+                if (response.IsSuccessStatusCode) //codigo 200
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    var user = JsonConvert.DeserializeObject<UserModel>(content);
+
+                    return user;
+                }
+
+                return new UserModel();
             }
-
-            return new UserModel();
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
         public async Task<UserModel> Create(UserModel user)
         {
-            String dados = URL;
-            var json = JsonConvert.SerializeObject(new
+            try
             {
-                firstName = user.FirstName,
-                surname = user.Surname,
-                age = user.Age
+                String dados = URL;
+                var json = JsonConvert.SerializeObject(new
+                {
+                    firstName = user.FirstName,
+                    surname = user.Surname,
+                    age = user.Age
 
-            });
+                });
 
-            HttpClient client = GetClient();
-            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync(dados, content);
+                HttpClient client = GetClient();
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync(dados, content);
 
-            if (response.IsSuccessStatusCode)
-            {
-                string user_response = await response.Content.ReadAsStringAsync();
-                var userResponse = JsonConvert.DeserializeObject<UserModel>(user_response);
+                if (response.IsSuccessStatusCode)
+                {
+                    string user_response = await response.Content.ReadAsStringAsync();
+                    var userResponse = JsonConvert.DeserializeObject<UserModel>(user_response);
 
-                return userResponse;
+                    return userResponse;
+                }
+
+                return new UserModel();
             }
-
-            return new UserModel();
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 
         public async Task<Boolean> Update(UserModel user)
         {
-            String dados = URL + "/" + user.Id;
-
-            var json = JsonConvert.SerializeObject(new
+            try
             {
-                firstName = user.FirstName,
-                surname = user.Surname,
-                age = user.Age
+                String dados = URL + "/" + user.Id;
 
-            });
+                var json = JsonConvert.SerializeObject(new
+                {
+                    firstName = user.FirstName,
+                    surname = user.Surname,
+                    age = user.Age
 
-            HttpClient client = GetClient();
-            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PutAsync(dados, content);
+                });
 
-            if (response.IsSuccessStatusCode)
-            {
-                return true;
+                HttpClient client = GetClient();
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PutAsync(dados, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+
+                return false;
             }
-
-            return false;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 
         public async Task<Boolean> Destroy(string Id)
         {
-            String dados = URL + "/" + Id.ToString();
-            HttpClient client = GetClient();
-            HttpResponseMessage response = await client.DeleteAsync(dados);
-            if (response.IsSuccessStatusCode)
+            try
             {
-                return true;
-            }
+                String dados = URL + "/" + Id.ToString();
+                HttpClient client = GetClient();
+                HttpResponseMessage response = await client.DeleteAsync(dados);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
 
-            return false;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

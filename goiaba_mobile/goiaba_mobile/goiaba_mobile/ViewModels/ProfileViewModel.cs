@@ -91,15 +91,22 @@ namespace goiaba_mobile.ViewModels
 
         public async void DeleteUser()
         {
-            var result = await userService.Destroy(this.id);
+            try
+            {
+                var result = await userService.Destroy(this.id);
 
-            if (result)
-            {
-                MessagingCenter.Send<String>("Successfully deleted", "SucessDelete");
+                if (result)
+                {
+                    MessagingCenter.Send<String>("Successfully deleted", "SucessDelete");
+                }
+                else
+                {
+                    MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FailDelete");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FailDelete");
+                MessagingCenter.Send<ArgumentException>(new ArgumentException(ex.Message), "FailDelete");
             }
 
         }
@@ -107,23 +114,30 @@ namespace goiaba_mobile.ViewModels
         public async void UpdateUser()
         {
 
-            var user = new UserModel()
+            try
             {
-                Id = this.Id,
-                FirstName = this.FirstName,
-                Surname = string.IsNullOrEmpty(Surname) ? "" : Surname,
-                Age = Convert.ToInt32(this.Age)
-            };
+                var user = new UserModel()
+                {
+                    Id = this.Id,
+                    FirstName = this.FirstName,
+                    Surname = string.IsNullOrEmpty(Surname) ? "" : Surname,
+                    Age = Convert.ToInt32(this.Age)
+                };
 
-            var result = await userService.Update(user);
+                var result = await userService.Update(user);
 
-            if (result)
-            {
-                MessagingCenter.Send<UserModel>(user, "SucessUpdate");
+                if (result)
+                {
+                    MessagingCenter.Send<UserModel>(user, "SucessUpdate");
+                }
+                else
+                {
+                    MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FailUpdate");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FailUpdate");
+                MessagingCenter.Send<ArgumentException>(new ArgumentException(ex.Message), "FailUpdate");
             }
 
         }

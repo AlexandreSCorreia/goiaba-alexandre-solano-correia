@@ -36,11 +36,21 @@ namespace goiaba_mobile.ViewModels
         {
             this.userService = new UserService(userRepository);
 
-            try
-            {
+         
                 EntrarCommand = new Command(async () =>
                 {
-                    var user = await this.userService.Find(this.Id);
+                    var user = new UserModel();
+
+                    try
+                    {
+                        user = await this.userService.Find(this.Id);
+                    }
+                    catch (Exception exc)
+                    {
+                        MessagingCenter.Send<LoginException>(new
+                                     LoginException("Communication error with the server.", exc), "FalhaLogin");
+                        return;
+                    }
 
                     if (!string.IsNullOrEmpty(user.FirstName))
                     {
@@ -60,12 +70,8 @@ namespace goiaba_mobile.ViewModels
                 {
                     MessagingCenter.Send<UserModel>(new UserModel(), "RegisterSeCommand");
                 });
-            }
-            catch (Exception exc)
-            {
-                MessagingCenter.Send<LoginException>(new
-                             LoginException("Communication error with the server.", exc), "FalhaLogin");
-            }
+          
+           
 
         }
 

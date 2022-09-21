@@ -7,7 +7,7 @@ namespace goiaba_mobile.Models
         private string id;
         public string Id
         {
-            get { return id; }
+            get { return id;  }
             set { id = value; }
         }
 
@@ -16,7 +16,14 @@ namespace goiaba_mobile.Models
         public string FirstName
         {
             get { return firstName; }
-            set { firstName = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("The first name field is mandatory");
+                }
+                firstName = value; 
+            }
         }
 
         private string surname;

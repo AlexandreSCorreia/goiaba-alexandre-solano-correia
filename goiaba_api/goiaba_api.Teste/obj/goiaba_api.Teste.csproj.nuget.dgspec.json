@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj": {}
+    "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj": {
+    "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj",
+        "projectUniqueName": "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj",
         "projectName": "goiaba_api.Teste",
-        "projectPath": "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj",
+        "projectPath": "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\goiaba_api.Teste.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\obj\\",
+        "outputPath": "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api.Teste\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -34,8 +34,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj": {
-                "projectPath": "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj"
+              "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj": {
+                "projectPath": "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj"
               }
             }
           }
@@ -95,14 +95,14 @@
         }
       }
     },
-    "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj": {
+    "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj",
+        "projectUniqueName": "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj",
         "projectName": "goiaba_api",
-        "projectPath": "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj",
+        "projectPath": "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\goiaba_api.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Videos\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\obj\\",
+        "outputPath": "C:\\goiaba-alexandre-solano-correia\\goiaba_api\\goiaba_api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

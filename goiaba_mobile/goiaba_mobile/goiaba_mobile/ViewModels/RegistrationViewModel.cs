@@ -84,15 +84,22 @@ namespace goiaba_mobile.ViewModels
 
         public async void SaveUser()
         {
-            var user = await userService.Create(this.user);
+            try
+            {
+                var user = await userService.Create(this.user);
 
-            if (!string.IsNullOrEmpty(user.FirstName))
+                if (!string.IsNullOrEmpty(user.FirstName))
+                {
+                    MessagingCenter.Send<UserModel>(user, "SucessRegister");
+                }
+                else
+                {
+                    MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FailRegister");
+                }
+            } 
+            catch (Exception ex)
             {
-                MessagingCenter.Send<UserModel>(user, "SucessRegister");
-            }
-            else
-            {
-                MessagingCenter.Send<ArgumentException>(new ArgumentException(), "FailRegister");
+                MessagingCenter.Send<ArgumentException>(new ArgumentException(ex.Message), "FailRegister");
             }
 
         }
